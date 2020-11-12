@@ -46,7 +46,11 @@ def get_good_reviews(df):
     """
 
     def get_some_reviews(dfx):
-        
+       """
+       This outputs three good reviews from the ones supplied
+       """
+
+
 
 
 def plot_review_graph_for_spot(df):
