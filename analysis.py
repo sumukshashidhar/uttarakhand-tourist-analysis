@@ -33,6 +33,12 @@ def input_picker():
     print("Please select \n1. Locations\n2. Unique Spots")
     try:
         inp = int(input())
+        if inp == 1:
+            pass
+        elif inp == 2:
+            pass
+        else:
+            pass
     except ValueError:
         print("Please enter a number")
         exit()
