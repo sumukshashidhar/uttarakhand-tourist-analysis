@@ -25,3 +25,8 @@ df["review_verdict"] = df.review_verdict.replace({
         "neutral":0.5
     })
 
+
+# make a list of our unique spots
+residences = df.spot.unique()
+
+
