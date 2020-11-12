@@ -28,9 +28,11 @@ df["review_verdict"] = df.review_verdict.replace(
 # make a list of our unique spots
 residences = df.spot.unique()
 
+def list_locations(dfa):
+    return dfa.
 
 def input_picker():
-    print("Please select \n1. Locations\n2. Unique Spots")
+    print("Please select \n1. User Locations\n2. Unique Spots\n 3. Spot Locations")
     try:
         inp = int(input())
         if inp == 1:
