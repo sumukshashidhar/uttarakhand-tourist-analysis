@@ -64,15 +64,19 @@ def get_good_reviews(df):
                         pass
                 else:
                     pass
-            maxers.append(maxine[0])
-            dfx.drop([ind])
+            maxers.append(maxine[3])
+            print(maxine)
+            dfx = dfx.drop(df.index[ind])
+            print(len(dfx.index))
         return maxers
 
+    print(len(df.index))
+    print(df.loc[df["review_verdict"] == 1])
     pos = get_some_reviews(df.loc[df["review_verdict"] == 1])
-    neg = get_some_reviews(df.loc[df["review_verdict"] == 0])
-    return(pos, neg)
+    # neg = get_some_reviews(df.loc[df["review_verdict"] == 0])
+    return(pos)
 
 
 if __name__ == "__main__":
-    get_good_reviews()
+    print(get_good_reviews(df.loc[df["spot"] == residences[0]]))
 
