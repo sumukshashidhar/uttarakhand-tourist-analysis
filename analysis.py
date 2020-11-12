@@ -64,10 +64,15 @@ def get_good_reviews(df):
                         pass
                 else:
                     pass
-            maxers.append(maxine)
+            maxers.append(maxine[0])
             dfx.drop([ind])
         return maxers
 
+    pos = get_some_reviews(df.loc[df["review_verdict"] == 1])
+    neg = get_some_reviews(df.loc[df["review_verdict"] == 0])
+    return(pos, neg)
+
+
 if __name__ == "__main__":
-input_picker()
+    get_good_reviews()
 
