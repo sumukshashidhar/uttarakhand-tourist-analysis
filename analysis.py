@@ -39,7 +39,14 @@ def input_picker():
         exit()
 
 
+def get_good_reviews(df):
+    """
+    I am defining a good review as something that is highly
+    polar and highly subjective
+    """
 
+    def get_some_reviews(dfx):
+        
 
 
 def plot_review_graph_for_spot(df):
