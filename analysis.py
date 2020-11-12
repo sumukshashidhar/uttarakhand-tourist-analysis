@@ -37,12 +37,18 @@ def input_picker():
     except:
         print("Please enter a number")
         exit()
-    
+
+
+
+
+
 def plot_review_graph_for_spot(df):
     print("We are now plotting a review graph")
     px.scatter(
             data_frame=df,
-            x="")
+            x="review_polarity",
+            y="review_subjectivity"
+            )
 
 if __name__ == "__main__":
     input_picker()
