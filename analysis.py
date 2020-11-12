@@ -20,7 +20,8 @@ df = pd.read_csv(data)
 df = df.drop(columns=["Unnamed: 0"])
 
 # quantify positivity and negativity
-df["review_verdict"] = df.review_verdict.replace({"positive": 1, "negative": 0, "neutral": 0.5})
+df["review_verdict"] = df.review_verdict.replace(
+    {"positive": 1, "negative": 0, "neutral": 0.5})
 
 # make a different type of index
 
@@ -55,12 +56,14 @@ def get_good_reviews(df):
         """
         maxine = 0, 0, 0, None
         for ind in dfx.index:
-            mult = dfx["review_polarity"][ind] * dfx["review_subjectivity"][ind]
+            mult = dfx["review_polarity"][ind] * \
+                dfx["review_subjectivity"][ind]
             if maxine[0] < mult:
                 maxine = mult, dfx["review_polarity"][ind], dfx["review_subjectivity"][ind], ind
             elif maxine[0] == mult:
                 maxabs = abs(maxine[1] - maxine[2])
-                contender_abs = abs(dfx["review_polarity"][ind] - dfx["review_subjectivity"][ind])
+                contender_abs = abs(
+                    dfx["review_polarity"][ind] - dfx["review_subjectivity"][ind])
                 if contender_abs > maxabs:
                     maxine = mult, dfx["review_polarity"][ind], dfx["review_subjectivity"][ind], ind
                 else:
@@ -79,4 +82,3 @@ def get_good_reviews(df):
 
 if __name__ == "__main__":
     print(get_good_reviews(df.loc[df["spot"] == residences[0]]))
-
