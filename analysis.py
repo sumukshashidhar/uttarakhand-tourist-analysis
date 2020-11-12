@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 """
 A simple python program.
 """
